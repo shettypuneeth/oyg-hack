@@ -1,0 +1,27 @@
+a {
+  text-decoration: none;
+}
+
+.container {
+  position: relative;
+}
+
+.list {
+  display: flex;
+  padding: 0;
+  margin: 0;
+}
+
+.list li {
+  list-style: none;
+  padding: 10px;
+}
+
+.image {
+  position: absolute;
+  margin: auto;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
