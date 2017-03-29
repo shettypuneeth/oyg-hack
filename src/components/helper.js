@@ -72,6 +72,12 @@ const aggregateDifferentEvents = function (mixPanelOutput) {
         }, {});
 };
 
+const convertToBarChartFormat = function (data) {
+    return Object.keys(data)
+        .sort()
+        .map(key => [key, data[key]])
+};
+
 export const mixPanelReportsGenerated = function () {
     const currentDate = new Date();
     const oneWeekAgoDate = new Date().setDate(currentDate.getMonth() - 1);
@@ -82,6 +88,15 @@ export const mixPanelReportsGenerated = function () {
     /**
      * Do the jsonp Call here
      */
+};
+
+const convertToLineChartFormat = function (data) {
+  Object.keys(data)
+      .map(key => ({
+          name: key,
+          data: Object.keys(data[key])
+              .map(date => data[key][date])
+      }))
 };
 
 export const mixPanelPayment = function () {
