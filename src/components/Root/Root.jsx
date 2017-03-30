@@ -3,6 +3,7 @@ import Card from '../Card';
 import './styles.css';
 
 import Goals from '../Goals';
+import Priorities from '../Priorities';
 
 const Root = () => {
   return (
@@ -28,7 +29,7 @@ const Root = () => {
             Hello
           </Card>
           <Card>
-            Hello
+            <Priorities />
           </Card>
         </div>
 
