@@ -1,4 +1,12 @@
-import { MIXPANEL_EVENTS } from './constants';
+import { MIXPANEL_SECRET } from '../../mixpanelSecret';
+
+import { jsonpRequest } from './Services/Request';
+import {
+    MIXPANEL_EVENTS,
+    MIXPANEL_EVENTS_ENDPOINT,
+    MIXPANEL_EVENT_PROPERTIES_ENDPOINT
+} from './constants';
+
 
 /**
  * format date to yyyy-mm-dd format
@@ -33,25 +41,33 @@ const aggregateDifferentValues = function (mixPanelOutput) {
 
 export const mixPanelTopEvents = function () {
     const currentDate = new Date();
-    const oneWeekAgoDate = new Date().setDate(currentDate.getDate() - 7);
-    const from_date = formatDate(oneWeekAgoDate);
-    const to_date = formatDate(currentDate);
-    const events = MIXPANEL_EVENTS.topEvents;
-    const unit = 'week';
-    /**
-     * Do the jsonp Call here
-     */
+    const yesterdayDate = new Date().setDate(currentDate.getDate() - 1);
+    const oneWeekAgoYesterdayDate = new Date().setDate(yesterdayDate.getDate() - 7);
+    const queryParams = {
+        from_date: formatDate(oneWeekAgoYesterdayDate),
+        to_date: formatDate(yesterdayDate),
+        event: MIXPANEL_EVENTS.topEvents,
+        unit: 'week'
+    };
+    const url = MIXPANEL_EVENTS_ENDPOINT(MIXPANEL_SECRET);
+    return jsonpRequest(url, queryParams)
+        .then(result => aggregateDifferentValues(result))
+        .catch(err => err)
 };
 
 export const mixPanelSignUp = function () {
     const currentDate = new Date();
-    const from_date = formatDate(currentDate);
-    const to_date = formatDate(currentDate);
-    const events = MIXPANEL_EVENTS.signUp;
-    const unit = 'day';
-    /**
-     * Do the jsonp Call here
-     */
+    const yesterdayDate = new Date().setDate(currentDate.getDate() - 1);
+    const queryParams = {
+        from_date: formatDate(yesterdayDate),
+        to_date: formatDate(yesterdayDate),
+        event: MIXPANEL_EVENTS.signUp,
+        unit: 'day'
+    };
+    const url = MIXPANEL_EVENTS_ENDPOINT(MIXPANEL_SECRET);
+    return jsonpRequest(url, queryParams)
+        .then(result => aggregateDifferentValues(result))
+        .catch(err => err)
 };
 
 /**
@@ -80,14 +96,18 @@ const convertToBarChartFormat = function (data) {
 
 export const mixPanelReportsGenerated = function () {
     const currentDate = new Date();
-    const oneWeekAgoDate = new Date().setDate(currentDate.getMonth() - 1);
-    const from_date = formatDate(oneWeekAgoDate);
-    const to_date = formatDate(currentDate);
-    const events = MIXPANEL_EVENTS.reports;
-    const unit = 'week';
-    /**
-     * Do the jsonp Call here
-     */
+    const yesterdayDate = new Date().setDate(currentDate.getDate() - 1);
+    const oneWeekAgoYesterdayDate = new Date().setDate(yesterdayDate.getDate() - 7);
+    const queryParams = {
+        from_date: formatDate(oneWeekAgoYesterdayDate),
+        to_date: formatDate(yesterdayDate),
+        event: MIXPANEL_EVENTS.reports,
+        unit: 'week'
+    };
+    const url = MIXPANEL_EVENTS_ENDPOINT(MIXPANEL_SECRET);
+    return jsonpRequest(url, queryParams)
+        .then(result => aggregateDifferentValues(result))
+        .catch(err => err)
 };
 
 const convertToLineChartFormat = function (data) {
@@ -101,13 +121,17 @@ const convertToLineChartFormat = function (data) {
 
 export const mixPanelPayment = function () {
     const currentDate = new Date();
-    const oneWeekAgoDate = new Date().setDate(currentDate.getMonth() - 1);
-    const from_date = formatDate(oneWeekAgoDate);
-    const to_date = formatDate(currentDate);
-    const events = MIXPANEL_EVENTS.payment;
-    const unit = 'week';
-    const name = 'paymentService';
-    /**
-     * Do the jsonp Call here
-     */
+    const yesterdayDate = new Date().setDate(currentDate.getDate() - 1);
+    const oneMonthAgoYesterdayDate = new Date().setDate(yesterdayDate.getMonth() - 1);
+    const queryParams = {
+        from_date: formatDate(oneMonthAgoYesterdayDate),
+        to_date: formatDate(yesterdayDate),
+        event: MIXPANEL_EVENTS.payment,
+        unit: 'week',
+        name: 'paymentService'
+    };
+    const url = MIXPANEL_EVENT_PROPERTIES_ENDPOINT(MIXPANEL_SECRET);
+    return jsonpRequest(url, queryParams)
+        .then(result => aggregateDifferentValues(result))
+        .catch(err => err)
 };

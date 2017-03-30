@@ -1,6 +1,7 @@
-export const MIXPANEL_EVENTS_ENDPOINT = 'https://mixpanel.com/api/2.0/events/';
-export const MIXPANEL_EVENT_PROPERTIES_ENDPOINT = 'https://mixpanel.com/api/2.0/events/properties/';
-
+export const MIXPANEL_EVENTS_ENDPOINT = (secretKey = '') =>
+    `https://${secretKey}@mixpanel.com/api/2.0/events/`;
+export const MIXPANEL_EVENT_PROPERTIES_ENDPOINT = (secretKey = '') =>
+    `https://${secretKey}@mixpanel.com/api/2.0/events/properties/`;
 
 /**
  * Mix panel events name used for the API calling
@@ -12,7 +13,7 @@ export const MIXPANEL_EVENTS = {
               'web_visualization', 'web_date', 'web_welcome', 'web_editPane_done', 'web_join', 'web_add',
               'web_duplicate ', 'web_reports_date', 'web_defer_autoClassify', 'web_start_autoClassify',
               'web_reports_create', 'web_reports_archived'],
-  payment: ['Payment'],
+  payment: 'Payment',
   signUp: ['app_signedUp']
 };
 

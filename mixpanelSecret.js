@@ -1,0 +1,1 @@
+export const MIXPANEL_SECRET = '5b244fd6815be5c5f88502eb844c36d2';
