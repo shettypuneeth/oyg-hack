@@ -1,9 +1,11 @@
 import React, {Component, PropTypes} from 'react';
 import classnames from 'classnames/bind';
+import ReactHighcharts from 'react-highcharts';
+
 import styles from './styles.css';
 
-import { PIE_CHART_CONFIG } from '../../chartUtils';
-import { getTopEventsChartsData } from '../../helper';
+import { LINE_CHART_CONFIG } from '../../chartUtils';
+import { getPaymentChartsData } from '../../helper';
 const cx = classnames.bind(styles);
 
 class Subscription extends Component {
@@ -15,18 +17,20 @@ class Subscription extends Component {
   }
 
   componentDidMount() {
-    getTopEventsChartsData()
+    getPaymentChartsData()
       .then(data => {
+        const { chartData, chartCategories } = data;
         let chart = this.refs.chart.getChart();
-        chart.series[0].setData(data);
+        chartData.forEach(series => chart.addSeries(series));
+        chart.xAxis[0].setCategories(chartCategories);
       })
   }
 
   render() {
     return (
-      <div>
+      <div style={{ height: '450px', width: '450px'}}>
         <ReactHighcharts
-          config={PIE_CHART_CONFIG}
+          config={LINE_CHART_CONFIG}
           ref='chart'
         />
       </div>

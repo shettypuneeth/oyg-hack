@@ -27,7 +27,7 @@ class TopEvents extends Component {
 
   render() {
     return (
-      <div>
+      <div style={{ height: '400px', width: '400px'}}>
         <ReactHighcharts
           config={PIE_CHART_CONFIG}
           ref='chart'

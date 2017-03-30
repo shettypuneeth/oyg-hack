@@ -1,6 +1,8 @@
 import React, {PropTypes} from 'react';
 import Card from '../Card';
 import TopEvents from '../Mixpanel/TopEvents/';
+import ReportsGenerated from '../Mixpanel/ReportsGenerated/';
+import Subscription from '../Mixpanel/Subscription/';
 import './styles.css';
 
 // TODO: Make the grids dynamically laid out.
@@ -13,10 +15,7 @@ const Root = () => {
             <TopEvents/>
           </Card>
           <Card>
-            Hello
-          </Card>
-          <Card>
-            Hello
+            <Subscription/>
           </Card>
         </div>
 
@@ -25,7 +24,7 @@ const Root = () => {
             Hello
           </Card>
           <Card>
-            Hello
+            <ReportsGenerated/>
           </Card>
           <Card>
             Hello

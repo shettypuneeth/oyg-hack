@@ -101,7 +101,7 @@ export const mixPanelSignUp = function () {
  */
 const aggregateDifferentEvents = function (mixPanelOutput) {
   const values = mixPanelOutput.data.values;
-  Object.keys(values)
+  return Object.keys(values)
     .reduce((agg, event) => {
       return Object.keys(values[event])
         .reduce((obj, date) => {
@@ -114,35 +114,49 @@ const aggregateDifferentEvents = function (mixPanelOutput) {
     }, {});
 };
 
+const removeYearFromDateString = (str) => str.substr(5);
+
 const convertToBarChartFormat = function (data) {
   return Object.keys(data)
     .sort()
-    .map(key => [key, data[key]])
+    .map(key => [removeYearFromDateString(key), data[key]])
 };
 
-export const mixPanelReportsGenerated = function () {
+const mixPanelReportsGenerated = function () {
   const currentDate = new Date();
   const yesterdayDate = new Date().setDate(currentDate.getDate() - 1);
-  const oneWeekAgoYesterdayDate = new Date().setDate(yesterdayDate.getDate() - 8);
+  const oneMonthAgoYesterdayDate = new Date().setDate(currentDate.getMonth() - 1);
   const queryParams = {
-    from_date: formatDate(oneWeekAgoYesterdayDate),
+    from_date: formatDate(oneMonthAgoYesterdayDate),
     to_date: formatDate(yesterdayDate),
     event: convertArrayToUriencoded(MIXPANEL_EVENTS.reports),
     unit: 'week'
   };
   const url = MIXPANEL_EVENTS_ENDPOINT(MIXPANEL_SECRET);
   return jsonpRequest(url, queryParams)
-    .then(result => aggregateDifferentValues(result))
+    .then(result => aggregateDifferentEvents(result))
     .catch(err => err)
 };
 
+export const getReportsGeneratedChartsData = () => {
+  return mixPanelReportsGenerated()
+    .then(data => convertToBarChartFormat(data));
+};
+
 const convertToLineChartFormat = function (data) {
-  Object.keys(data)
+  const chartData = Object.keys(data)
     .map(key => ({
       name: key,
       data: Object.keys(data[key])
         .map(date => data[key][date])
-    }))
+    }));
+  const chartCategories = Object.keys(data[Object.keys(data)[0]])
+    .map(str => removeYearFromDateString(str))
+    .sort();
+  return {
+    chartData,
+    chartCategories
+  }
 };
 
 export const mixPanelPayment = function () {
@@ -154,10 +168,16 @@ export const mixPanelPayment = function () {
     to_date: formatDate(yesterdayDate),
     event: MIXPANEL_EVENTS.payment,
     unit: 'week',
+    type: 'general',
     name: 'paymentService'
   };
   const url = MIXPANEL_EVENT_PROPERTIES_ENDPOINT(MIXPANEL_SECRET);
   return jsonpRequest(url, queryParams)
-    .then(result => aggregateDifferentValues(result))
+    .then(result => result.data.values)
     .catch(err => err)
+};
+
+export const getPaymentChartsData = () => {
+  return mixPanelPayment()
+    .then(data => convertToLineChartFormat(data));
 };
