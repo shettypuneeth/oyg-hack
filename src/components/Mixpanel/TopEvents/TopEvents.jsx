@@ -1,10 +1,10 @@
 import React, {Component, PropTypes} from 'react';
 import classnames from 'classnames/bind';
-import styles from './styles.scss';
+import styles from './styles.css';
 
 const cx = classnames.bind(styles);
 
-class Mixpanel extends Component {
+class TopEvents extends Component {
   render() {
     return (
       <div></div>
@@ -12,7 +12,7 @@ class Mixpanel extends Component {
   }
 }
 
-Mixpanel.propTypes = {};
-Mixpanel.defaultProps = {};
+TopEvents.propTypes = {};
+TopEvents.defaultProps = {};
 
-export default Mixpanel;
+export default TopEvents;

@@ -1,5 +1,6 @@
 import React, {PropTypes} from 'react';
 import Card from '../Card';
+import ReportsGenerated from '../Mixpanel/ReportsGenerated/';
 import './styles.css';
 
 const propTypes = {};
@@ -10,11 +11,11 @@ const Root = (props) => {
       <Card>
         <div style={{width: '100px', height: '300px'}}>Hello</div>
       </Card>
-      
+
       <Card>
-        Hello
+        <ReportsGenerated/>
       </Card>
-      
+
       <Card>
         Hello
       </Card>

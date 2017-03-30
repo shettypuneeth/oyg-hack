@@ -25,15 +25,21 @@ function formatDate(date) {
     return [year, month, day].join('-');
 }
 
+const convertArrayToUriencoded = (array) => {
+  const result = array.reduce((agg, value) => agg.concat(`%22${value}%22%2C%20`), '%5B');
+  const uri = result.substr(0, result.length-6);
+  return uri.concat('%5D');
+};
+
 /**
  * Returns [{id: String, total: Integer}, {}]
  * @param mixPanelOutput
  */
 const aggregateDifferentValues = function (mixPanelOutput) {
     const values = mixPanelOutput.data.values;
-    Object.keys(values)
+    return Object.keys(values)
         .map(event => ({
-            id: 'event',
+            id: event,
             total: Object.keys(values[event])
                 .reduce( (acc, date) => acc + values[event][date], 0)
         }));
@@ -42,11 +48,11 @@ const aggregateDifferentValues = function (mixPanelOutput) {
 export const mixPanelTopEvents = function () {
     const currentDate = new Date();
     const yesterdayDate = new Date().setDate(currentDate.getDate() - 1);
-    const oneWeekAgoYesterdayDate = new Date().setDate(yesterdayDate.getDate() - 7);
+    const oneWeekAgoYesterdayDate = new Date().setDate(currentDate.getDate() - 8);
     const queryParams = {
         from_date: formatDate(oneWeekAgoYesterdayDate),
         to_date: formatDate(yesterdayDate),
-        event: MIXPANEL_EVENTS.topEvents,
+        event: convertArrayToUriencoded(MIXPANEL_EVENTS.topEvents),
         unit: 'week'
     };
     const url = MIXPANEL_EVENTS_ENDPOINT(MIXPANEL_SECRET);
@@ -61,7 +67,7 @@ export const mixPanelSignUp = function () {
     const queryParams = {
         from_date: formatDate(yesterdayDate),
         to_date: formatDate(yesterdayDate),
-        event: MIXPANEL_EVENTS.signUp,
+        event: convertArrayToUriencoded(MIXPANEL_EVENTS.signUp),
         unit: 'day'
     };
     const url = MIXPANEL_EVENTS_ENDPOINT(MIXPANEL_SECRET);
@@ -97,11 +103,11 @@ const convertToBarChartFormat = function (data) {
 export const mixPanelReportsGenerated = function () {
     const currentDate = new Date();
     const yesterdayDate = new Date().setDate(currentDate.getDate() - 1);
-    const oneWeekAgoYesterdayDate = new Date().setDate(yesterdayDate.getDate() - 7);
+    const oneWeekAgoYesterdayDate = new Date().setDate(yesterdayDate.getDate() - 8);
     const queryParams = {
         from_date: formatDate(oneWeekAgoYesterdayDate),
         to_date: formatDate(yesterdayDate),
-        event: MIXPANEL_EVENTS.reports,
+        event: convertArrayToUriencoded(MIXPANEL_EVENTS.reports),
         unit: 'week'
     };
     const url = MIXPANEL_EVENTS_ENDPOINT(MIXPANEL_SECRET);
@@ -122,7 +128,7 @@ const convertToLineChartFormat = function (data) {
 export const mixPanelPayment = function () {
     const currentDate = new Date();
     const yesterdayDate = new Date().setDate(currentDate.getDate() - 1);
-    const oneMonthAgoYesterdayDate = new Date().setDate(yesterdayDate.getMonth() - 1);
+    const oneMonthAgoYesterdayDate = new Date().setDate(currentDate.getMonth() - 1);
     const queryParams = {
         from_date: formatDate(oneMonthAgoYesterdayDate),
         to_date: formatDate(yesterdayDate),
