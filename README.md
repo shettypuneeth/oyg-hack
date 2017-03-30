@@ -28,3 +28,5 @@ NPM scripts:
 |------------------|-----------|
 |`start`|Serves your app at `localhost:8080`. HMR will be enabled in development.|
 |`build`|Compiles the application to disk (`~/dist` by default).|
+
+### ADD MIXPANEL SECRET to file mixpanelSecret.js
