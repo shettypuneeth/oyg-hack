@@ -7,60 +7,38 @@ import './styles.css';
 const Root = () => {
   return (
     <div style={{height: '100%'}}>
-      <div className='grid-wrapper'>
-        <div className="grid-item">
+      <div className='grid-layout'>
+        <div className="grid-column">
           <Card>
             <TopEvents/>
           </Card>
-        </div>
-
-        <div className="grid-item">
+          <Card>
+            Hello
+          </Card>
           <Card>
             Hello
           </Card>
         </div>
 
-        <div className="grid-item">
+        <div className="grid-column">
           <Card>
             Hello
           </Card>
-        </div>
-      </div>
-
-      <div className='grid-wrapper'>
-        <div className="grid-item">
           <Card>
             Hello
           </Card>
-        </div>
-
-        <div className="grid-item">
           <Card>
             Hello
           </Card>
         </div>
 
-        <div className="grid-item">
+        <div className="grid-column">
           <Card>
             Hello
           </Card>
-        </div>
-      </div>
-
-      <div className='grid-wrapper'>
-        <div className="grid-item">
           <Card>
             Hello
           </Card>
-        </div>
-
-        <div className="grid-item">
-          <Card>
-            Hello
-          </Card>
-        </div>
-
-        <div className="grid-item">
           <Card>
             Hello
           </Card>

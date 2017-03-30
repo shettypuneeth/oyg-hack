@@ -1,13 +1,24 @@
-.grid-wrapper {
+.grid-layout {
   display: flex;
-  margin-bottom: 1px;
+  flex-direction: row;
+  height: 100%;
+}
+
+.grid-column {
+  display: flex;
+  flex: 1;
+  margin-right: 5px;
+  flex-direction: column;
 }
 
 .grid-item {
+  display: flex;
   flex: 1;
-  margin-right: 1px;
+  justify-content: center;
+  align-items: center;
 }
 
-.grid-item :last-child {
-  margin-right: 0;
+.cols {
+  column-count: 3;
+  column-gap: 0;
 }
