@@ -5,7 +5,9 @@ import ReportsGenerated from '../Mixpanel/ReportsGenerated/';
 import Subscription from '../Mixpanel/Subscription/';
 import './styles.css';
 
-// TODO: Make the grids dynamically laid out.
+import Goals from '../Goals';
+import Priorities from '../Priorities';
+
 const Root = () => {
   return (
     <div style={{height: '100%'}}>
@@ -27,13 +29,13 @@ const Root = () => {
             <ReportsGenerated/>
           </Card>
           <Card>
-            Hello
+            <Priorities />
           </Card>
         </div>
 
         <div className="grid-column">
           <Card>
-            Hello
+            <Goals />
           </Card>
           <Card>
             Hello

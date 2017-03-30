@@ -7,7 +7,26 @@ const cx = classnames.bind(styles);
 class Goals extends Component {
   render() {
     return (
-      <div></div>
+      <div className='goals-container'>
+        <div className="goals-header">
+          GOALS
+        </div>
+        <section className='goals-body'>
+          <ul>
+            <li>
+              UK subscription to react 2M
+            </li>
+
+            <li>
+              Mobile dashboard
+            </li>
+
+            <li>
+              Visit IQ
+            </li>
+          </ul>
+        </section>
+      </div>
     );
   }
 }
