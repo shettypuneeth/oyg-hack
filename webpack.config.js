@@ -1,5 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   context: path.resolve(__dirname, './src'),
@@ -77,6 +78,11 @@ module.exports = {
     // enable HMR globally
 
     new webpack.NamedModulesPlugin(),
+
+    new HtmlWebpackPlugin({
+      inject: true,
+      template: 'public/index.html',
+    }),
     
     new webpack.optimize.CommonsChunkPlugin({
       name: 'vendor', // Specify the common bundle's name

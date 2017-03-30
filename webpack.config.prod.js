@@ -9,8 +9,7 @@ module.exports = {
     bundle: './index.js',
     vendor: [
       'react',
-      'react-dom',
-      'react-router-dom'
+      'react-dom'
     ]
   },
   output: {
@@ -38,7 +37,7 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        loader:  ExtractTextPlugin.extract({
+        use:  ExtractTextPlugin.extract({
           loader: 'css-loader?importLoaders=1'
         })
       },
@@ -70,6 +69,11 @@ module.exports = {
     // compile time plugins
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': '"production"'
+    }),
+
+    new HtmlWebpackPlugin({
+      inject: true,
+      template: 'public/index.html',
     }),
 
     new webpack.optimize.UglifyJsPlugin({
