@@ -1,5 +1,7 @@
 .grid-wrapper {
-  display: grid;
-  grid-template-rows: auto auto auto;
-  grid-template-columns: auto auto auto;
+  display: flex;
+}
+
+.grid-item {
+  flex: 1;
 }

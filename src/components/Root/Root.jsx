@@ -2,26 +2,28 @@ import React, {PropTypes} from 'react';
 import Card from '../Card';
 import './styles.css';
 
-const propTypes = {};
-
-const Root = (props) => {
+const Root = () => {
   return (
     <div className='grid-wrapper'>
-      <Card>
-        <div style={{width: '100px', height: '300px'}}>Hello</div>
-      </Card>
-      
-      <Card>
-        Hello
-      </Card>
-      
-      <Card>
-        Hello
-      </Card>
+      <div className="grid-item">
+        <Card>
+          Hello
+        </Card>
+      </div>
+
+      <div className="grid-item">
+        <Card>
+          Hello
+        </Card>
+      </div>
+
+      <div className="grid-item">
+        <Card>
+          Hello
+        </Card>
+      </div>
     </div>
   );
 };
-
-Root.propTypes = propTypes;
 
 export default Root;
