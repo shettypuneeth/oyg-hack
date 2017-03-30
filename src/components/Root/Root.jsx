@@ -1,5 +1,6 @@
 import React, {PropTypes} from 'react';
 import Card from '../Card';
+import TopEvents from '../Mixpanel/TopEvents/';
 import './styles.css';
 
 // TODO: Make the grids dynamically laid out.
@@ -9,7 +10,7 @@ const Root = () => {
       <div className='grid-wrapper'>
         <div className="grid-item">
           <Card>
-            Hello
+            <TopEvents/>
           </Card>
         </div>
 
