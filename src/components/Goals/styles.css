@@ -1,0 +1,25 @@
+.goals-container {
+  font-family: 'Open Sans Condensed', sans-serif;
+  font-weight: 700;
+  height: 300px;
+  flex: 1;
+  color: #34495e;
+}
+
+.goals-header {
+  border-bottom: 1px solid #bdc3c7;
+  padding: 5px 0;
+  text-align: center;
+}
+
+.goals-body ul {
+  list-style: none;
+  padding: 0;
+}
+
+.goals-body li {
+  padding: 5px 0;
+  color: #7f8c8d;
+  text-align: center;
+}
+

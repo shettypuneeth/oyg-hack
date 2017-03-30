@@ -2,7 +2,8 @@ import React, {PropTypes} from 'react';
 import Card from '../Card';
 import './styles.css';
 
-// TODO: Make the grids dynamically laid out.
+import Goals from '../Goals';
+
 const Root = () => {
   return (
     <div style={{height: '100%'}}>
@@ -33,7 +34,7 @@ const Root = () => {
 
         <div className="grid-column">
           <Card>
-            Hello
+            <Goals />
           </Card>
           <Card>
             Hello
