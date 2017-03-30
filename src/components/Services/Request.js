@@ -20,7 +20,7 @@ export function jsonpRequest(url, queryParams) {
   const requestUrl = `${url}?${inlineParams}`;
 
   return new Promise((resolve, reject) => {
-    jsonp(requestUrl, { param: 'jsonp'}, (err, data) => {
+    jsonp(requestUrl, (err, data) => {
       if (err) {
         reject(err);
       }

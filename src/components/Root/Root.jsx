@@ -1,5 +1,8 @@
 import React, {PropTypes} from 'react';
 import Card from '../Card';
+import TopEvents from '../Mixpanel/TopEvents/';
+import ReportsGenerated from '../Mixpanel/ReportsGenerated/';
+import Subscription from '../Mixpanel/Subscription/';
 import './styles.css';
 
 import Goals from '../Goals';
@@ -11,13 +14,10 @@ const Root = () => {
       <div className='grid-layout'>
         <div className="grid-column">
           <Card>
-            Hello
+            <TopEvents/>
           </Card>
           <Card>
-            Hello
-          </Card>
-          <Card>
-            Hello
+            <Subscription/>
           </Card>
         </div>
 
@@ -26,7 +26,7 @@ const Root = () => {
             Hello
           </Card>
           <Card>
-            Hello
+            <ReportsGenerated/>
           </Card>
           <Card>
             <Priorities />
