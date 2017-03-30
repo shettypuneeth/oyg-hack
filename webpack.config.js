@@ -58,7 +58,7 @@ module.exports = {
           'style-loader',
           'css-loader?sourceMap&-minimize',
           'postcss-loader'
-        ]
+        ],
       },
       {
         test: /\.(png|jpg)$/,
