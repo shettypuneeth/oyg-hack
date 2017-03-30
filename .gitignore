@@ -33,3 +33,5 @@ nbproject
 .idea
 .node_history
 dist
+
+mixpanelSecret.js
