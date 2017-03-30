@@ -1,28 +1,72 @@
 import React, {PropTypes} from 'react';
 import Card from '../Card';
-import ReportsGenerated from '../Mixpanel/ReportsGenerated/';
 import './styles.css';
 
-const propTypes = {};
-
-const Root = (props) => {
+// TODO: Make the grids dynamically laid out.
+const Root = () => {
   return (
-    <div className='grid-wrapper'>
-      <Card>
-        <div style={{width: '100px', height: '300px'}}>Hello</div>
-      </Card>
+    <div style={{height: '100%'}}>
+      <div className='grid-wrapper'>
+        <div className="grid-item">
+          <Card>
+            Hello
+          </Card>
+        </div>
 
-      <Card>
-        <ReportsGenerated/>
-      </Card>
+        <div className="grid-item">
+          <Card>
+            Hello
+          </Card>
+        </div>
 
-      <Card>
-        Hello
-      </Card>
+        <div className="grid-item">
+          <Card>
+            Hello
+          </Card>
+        </div>
+      </div>
+
+      <div className='grid-wrapper'>
+        <div className="grid-item">
+          <Card>
+            Hello
+          </Card>
+        </div>
+
+        <div className="grid-item">
+          <Card>
+            Hello
+          </Card>
+        </div>
+
+        <div className="grid-item">
+          <Card>
+            Hello
+          </Card>
+        </div>
+      </div>
+
+      <div className='grid-wrapper'>
+        <div className="grid-item">
+          <Card>
+            Hello
+          </Card>
+        </div>
+
+        <div className="grid-item">
+          <Card>
+            Hello
+          </Card>
+        </div>
+
+        <div className="grid-item">
+          <Card>
+            Hello
+          </Card>
+        </div>
+      </div>
     </div>
   );
 };
-
-Root.propTypes = propTypes;
 
 export default Root;

@@ -2,13 +2,22 @@
   box-sizing: border-box;
 }
 
+html {
+  height: 100%;
+}
+
 body {
   background: #f4f4f6;
   margin: 0;
+  height: 100%;
 }
 
 a {
   text-decoration: none;
+}
+
+#root {
+  height: 100%;
 }
 
 .container {
