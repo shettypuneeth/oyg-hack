@@ -1,6 +1,6 @@
 export const MIXPANEL_EVENTS_ENDPOINT = 'https://mixpanel.com/api/2.0/events/';
 export const MIXPANEL_EVENT_PROPERTIES_ENDPOINT = 'https://mixpanel.com/api/2.0/events/properties/';
-export const MIXPANEL_KEY = 'NWIyNDRmZDY4MTViZTVjNWY4ODUwMmViODQ0YzM2ZDI6';
+
 
 /**
  * Mix panel events name used for the API calling
