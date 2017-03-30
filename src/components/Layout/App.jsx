@@ -1,16 +1,16 @@
 import React, { Component } from 'react';
+import './normalize.css';
 import './styles.css';
+import Root from '../Root';
 
 class App extends Component {
   render() {
     return (
-      <div>Hello</div>
+      <Root />
     );
   }
 }
 
 App.propTypes = {};
-App.defaultProps = {};
 
 export default App;
-  

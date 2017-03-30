@@ -38,7 +38,7 @@ module.exports = {
       {
         test: /\.css$/,
         use:  ExtractTextPlugin.extract({
-          loader: 'css-loader?importLoaders=1'
+          loader: 'css-loader?minimize=true&importLoaders=1'
         })
       },
       {
