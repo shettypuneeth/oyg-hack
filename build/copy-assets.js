@@ -7,7 +7,7 @@ const PUBLIC_PATH = 'dist/';
 
 const copyAssets = function () {
   console.log('Copying assets...');
-  let success = true;
+  var success = true;
 
   STATIC_FILES.map(s => {
     try {

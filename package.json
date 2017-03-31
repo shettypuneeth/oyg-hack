@@ -5,8 +5,9 @@
   "main": "index.js",
   "scripts": {
     "start": "node_modules/.bin/webpack-dev-server",
+    "prebuild": "node ./build/clean-dist",
     "build": "webpack --config webpack.config.prod.js",
-    "post-build": "node ./build/copy-assets",
+    "postbuild": "node ./build/copy-assets",
     "test": ""
   },
   "keywords": [
