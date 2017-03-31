@@ -12,22 +12,35 @@ class Zendesk extends Component {
     this.state = {
       data: ''
     };
+    this.getList.bind(this);
   }
 
   componentDidMount() {
-    normalRequest('https://ccc3a677.ngrok.io/goals/zendesk_data/')
+    normalRequest('https://058b3586.ngrok.io/goals/zendesk_data/')
       .then(data => {
-        const tickets = JSON.stringify(processZenDeskData(data));
+        const tickets = processZenDeskData(data);
+        console.log("tickets",tickets);
         this.setState({
           data: tickets})
       });
   }
 
+  getList(ticketArray) {
+    if(ticketArray=== undefined)
+      return '';
+    let retval = '';
+    console.log("Length",ticketArray.length);
+    for(let ticket of ticketArray){
+      retval += "<div>"+ ticket['subject'] +"</div> <div>"+ticket['description']+"</div>";
+    }
+    return retval;
+
+  }
   render() {
     return (
-      <section className="releaseDates-container">
-        <div className="releaseDates-header">
-          {this.state.data}
+      <section className="zendesk-container">
+        <div className="zendesk-header">
+          {this.getList(this.state.data)}
         </div>
       </section>
     );

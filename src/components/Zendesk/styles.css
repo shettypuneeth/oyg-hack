@@ -1,11 +1,12 @@
-.releaseDates-container {
+.zendesk-container {
   font-family: 'Open Sans Condensed', sans-serif;
   font-weight: 700;
   flex: 1;
   height: 400px;
+  width: 300px;
 }
 
-.releaseDates-header {
+.zendesk-header {
   border-bottom: 1px solid #bdc3c7;
   padding: 5px 0;
   text-align: center;
