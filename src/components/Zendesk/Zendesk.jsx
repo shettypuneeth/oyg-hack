@@ -13,12 +13,23 @@ class Zendesk extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      tickets: []
+      tickets: [],
+      selectedTicket: null
     };
+
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick(id) {
+    const { selectedTicket } = this.state;
+    const newId = selectedTicket === id ? null : id;
+    this.setState({
+      selectedTicket: newId
+    });
   }
 
   componentDidMount() {
-    getRequest('https://ccc3a677.ngrok.io/goals/zendesk_data/')
+    getRequest('https://058b3586.ngrok.io/goals/zendesk_data/')
       .then(data => {
         const tickets = processZenDeskData(data);
         this.setState({ tickets })
@@ -26,8 +37,8 @@ class Zendesk extends Component {
   }
 
   render() {
-    const { tickets } = this.state;
-    const T = tickets.splice(0, 3);
+    const { tickets, selectedTicket } = this.state;
+    const T = tickets.slice(0, 3);
     return (
       <section className="zendesk-container">
         <Header header='zendesk tickets' />
@@ -38,6 +49,9 @@ class Zendesk extends Component {
             return (
               <Tickets
                 key={i}
+                id={i}
+                selected={i === selectedTicket}
+                handleClick={this.handleClick}
                 subject={subject}
                 description={description}
                 date={date}

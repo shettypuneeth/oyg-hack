@@ -84,10 +84,10 @@ export const processZenDeskData = function (response) {
   const { results } = response;
   if (results) {
     return results.map(r => ({
-      subject: r['subject'],
+      subject: r['subject'].replace('Re:', ''),
       description: r['description'],
       date: parseDate(r['created_at']),
-      link: r['link']
+      link: r['url']
     }));
   }
 

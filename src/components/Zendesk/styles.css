@@ -28,20 +28,21 @@
 .ticket-container {
   margin-top: 10px;
   padding: 10px;
-  background: #2980b9;
-  color: white;
+  color: #2c3e50;
+  border: 1px solid #bdc3c7;
 }
 
 .ticket-header {
   display: flex;
   justify-content: space-between;
   margin-bottom: 10px;
-  border-bottom: 1px solid white;
+  /*border-bottom: 1px solid #bdc3c7;*/
   padding-bottom: 5px;
 }
 
-.ticket-header .subject {
-
+.ticket-header .subject a {
+  text-decoration: underline;
+  color: #3498db;
 }
 
 .ticket-header .date {
@@ -49,8 +50,14 @@
 }
 
 .desc {
-  width: 200px;
+  width: 430px;
   word-wrap: break-word;
   overflow: hidden;
   height: 100px;
+  transition: height 0.5s;
+  cursor: pointer;
+}
+
+.full-view {
+  height: auto;
 }

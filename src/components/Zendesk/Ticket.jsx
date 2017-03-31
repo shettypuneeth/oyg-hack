@@ -1,9 +1,21 @@
 import React, {PropTypes} from 'react';
-import './styles.css';
+import styles from './styles.css';
+import classnames from 'classnames/bind';
+
+const cx = classnames.bind(styles);
 
 const propTypes = {};
 
-const Ticket = ({ subject, description, date, link }) => {
+const Ticket = ({ id, subject, selected, description, date, link, handleClick }) => {
+
+  const onClick = () => {
+    handleClick(id)
+  }
+
+  const descStyles = cx('desc', {
+    'full-view': selected
+  });
+
   return (
     <div className="ticket-container">
       <div className="ticket-header">
@@ -17,7 +29,10 @@ const Ticket = ({ subject, description, date, link }) => {
         </div>
       </div>
 
-      <div className='desc'>
+      <div
+        className={descStyles}
+        onClick={onClick}
+      >
         { description }
       </div>
     </div>
