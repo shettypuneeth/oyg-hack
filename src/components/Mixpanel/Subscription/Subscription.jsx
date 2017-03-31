@@ -8,6 +8,12 @@ import { LINE_CHART_CONFIG } from '../../chartUtils';
 import { getPaymentChartsData } from '../../helper';
 const cx = classnames.bind(styles);
 
+ReactHighcharts.Highcharts.setOptions({
+  lang: {
+    thousandsSep: ','
+  }
+});
+
 class Subscription extends Component {
   constructor(props) {
     super(props);
@@ -28,7 +34,7 @@ class Subscription extends Component {
 
   render() {
     return (
-      <div style={{ height: '450px', width: '450px'}}>
+      <div>
         <ReactHighcharts
           config={LINE_CHART_CONFIG}
           ref='chart'

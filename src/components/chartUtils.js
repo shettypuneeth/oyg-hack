@@ -1,6 +1,8 @@
 export const PIE_CHART_CONFIG = {
   chart: {
-    type: 'pie'
+    type: 'pie',
+    width: 555,
+    height: 400
   },
   title: {
     text: 'Top features for v2 Dashboard'
@@ -12,7 +14,12 @@ export const PIE_CHART_CONFIG = {
     pie: {
       allowPointSelect: true,
       dataLabels: {
-        enabled: false
+        enabled: true,
+        format: '{point.name}: {point.percentage:.1f} %',
+        style: {
+          color: 'black'
+        },
+        distance: 10
       },
       showInLegend: true,
       verticalAlign: 'top',
@@ -37,7 +44,9 @@ export const PIE_CHART_CONFIG = {
 
 export const BAR_CHART_CONFIG = {
   chart: {
-    type: 'column'
+    type: 'column',
+    width: 555,
+    height: 300,
   },
   title: {
     text: 'Reports generated each week'
@@ -76,7 +85,9 @@ export const BAR_CHART_CONFIG = {
 
 export const LINE_CHART_CONFIG = {
   chart: {
-    type: 'line'
+    type: 'line',
+    width: 555,
+    height: 400,
   },
   title: {
     text: 'Subscriptions from different Source'

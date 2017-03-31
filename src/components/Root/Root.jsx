@@ -3,6 +3,7 @@ import Card from '../Card';
 import TopEvents from '../Mixpanel/TopEvents/';
 import ReportsGenerated from '../Mixpanel/ReportsGenerated/';
 import Subscription from '../Mixpanel/Subscription/';
+import SignUps from '../Mixpanel/SignUps/';
 import './styles.css';
 
 import Goals from '../Goals';
@@ -23,7 +24,7 @@ const Root = () => {
 
         <div className="grid-column">
           <Card>
-            Hello
+            <SignUps/>
           </Card>
           <Card>
             <ReportsGenerated/>

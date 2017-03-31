@@ -9,6 +9,12 @@ import styles from './styles.css';
 
 const cx = classnames.bind(styles);
 
+ReactHighcharts.Highcharts.setOptions({
+  lang: {
+    thousandsSep: ','
+  }
+});
+
 class ReportsGenerated extends Component {
 
   constructor(props) {
@@ -28,7 +34,7 @@ class ReportsGenerated extends Component {
 
   render() {
     return (
-      <div style={{ height: '400px', width: '400px'}}>
+      <div>
         <ReactHighcharts
           config={BAR_CHART_CONFIG}
           ref='chart'
