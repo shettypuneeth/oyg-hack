@@ -120,10 +120,7 @@ export const mixPanelSignUp = function () {
 
 export const mixPanelDrivesCaptured = function () {
   const start = new Date();
-  start.setHours(0,0,0,0);
-
   const end = new Date();
-  end.setHours(23,59,59,999);
 
   const queryParams = {
     from_date: formatDate(start),

@@ -46,7 +46,7 @@ export const BAR_CHART_CONFIG = {
   chart: {
     type: 'column',
     width: 555,
-    height: 290,
+    height: 310,
   },
   title: {
     text: ''

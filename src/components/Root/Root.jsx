@@ -8,8 +8,8 @@ import DrivesCaptured from '../Mixpanel/DrivesCaptured/';
 import './styles.css';
 
 import Goals from '../Goals';
-import ReleaseDates from '../ReleaseDates';
 import Zendesk from '../Zendesk';
+import Copyright from '../Copyright/Copyright';
 
 const Root = () => {
   return (
@@ -45,6 +45,7 @@ const Root = () => {
           </Card>
         </div>
       </div>
+      <Copyright />
     </div>
   );
 };

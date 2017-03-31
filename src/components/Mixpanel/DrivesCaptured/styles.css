@@ -5,8 +5,18 @@
   top: 5px;
   right: 10px;
   border-radius: 50%;
-  background: #2980b9;
+  background: #e74c3c;
   opacity: 0.89;
+}
+
+.live-banner {
+  font-family: 'Open Sans Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 13px;
+  position: absolute;
+  top: 4px;
+  right: 31px;
+  color: #e74c3c;
 }
 
 .splash {
@@ -15,7 +25,7 @@
   height: 10px;
   top: 1px;
   right: 1px;
-  border: 1px solid #3498db;
+  border: 1px solid #e74c3c;
   border-radius: 50%;
   animation: splash 3s linear infinite;
 }
