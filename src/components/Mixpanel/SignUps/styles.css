@@ -1,9 +1,10 @@
 .signup-container {
   flex: 1;
+  position: relative;
 }
 
 .signup-body {
-  padding: 10px 0;
+  padding: 50px 0;
 }
 
 .signup-body .count {

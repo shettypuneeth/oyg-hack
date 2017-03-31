@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import classnames from 'classnames/bind';
 import styles from './styles.css';
 import Header from '../Header';
-import { normalRequest } from '../Services/Request';
+import { getRequest } from '../Services/Request';
+
 const cx = classnames.bind(styles);
 
 class Goals extends Component {
@@ -15,12 +16,10 @@ class Goals extends Component {
   }
 
   componentDidMount() {
-    normalRequest('https://058b3586.ngrok.io/goals/fetch_priority/')
+    getRequest('https://058b3586.ngrok.io/goals/fetch_priority/')
       .then(data => {
-
-        console.log("fetch_priority", data);
         this.setState({
-          data: data.body
+          data: data
         })
       });
   }

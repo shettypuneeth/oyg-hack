@@ -38,7 +38,7 @@ class Zendesk extends Component {
 
   render() {
     const { tickets, selectedTicket } = this.state;
-    const T = tickets.slice(0, 3);
+    const T = tickets.slice(0, 4);
     return (
       <section className="zendesk-container">
         <Header header='zendesk tickets' />

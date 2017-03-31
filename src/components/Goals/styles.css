@@ -11,7 +11,7 @@
 /* LIST #1 */
 .goals-body ul {
   margin: 0;
-  padding: 0;
+  padding: 10px 0;
   list-style: none;
 }
 
@@ -29,7 +29,7 @@
 }
 
 .goals-body li {
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.2);
   padding: 9px 16px 9px 34px;
   margin-top: 6px;
 }

@@ -24,13 +24,17 @@ class SignUps extends Component {
   }
 
   componentDidMount() {
-    window.setInterval(this.callMixPanel, 1000);
+    window.setInterval(this.callMixPanel, 15000);
   }
 
   render() {
     return (
       <div className='signup-container'>
         <Header header='DRIVES CAPTURED' />
+        
+        <div className="live-indicator">
+          <div className="splash"></div>
+        </div>
 
         <div className="signup-body">
           <div className="count">
