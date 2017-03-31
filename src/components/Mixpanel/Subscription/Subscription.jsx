@@ -4,6 +4,7 @@ import ReactHighcharts from 'react-highcharts';
 
 import styles from './styles.css';
 
+import Header from '../../Header';
 import { LINE_CHART_CONFIG } from '../../chartUtils';
 import { getPaymentChartsData } from '../../helper';
 const cx = classnames.bind(styles);
@@ -35,6 +36,8 @@ class Subscription extends Component {
   render() {
     return (
       <div>
+        <Header header='Subscriptions from different Source' />
+        <br />
         <ReactHighcharts
           config={LINE_CHART_CONFIG}
           ref='chart'

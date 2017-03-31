@@ -1,6 +1,7 @@
 import React, {Component, PropTypes} from 'react';
 import classnames from 'classnames/bind';
 import styles from './styles.css';
+import Header from '../../Header';
 
 import { mixPanelSignUp } from '../../helper';
 
@@ -23,8 +24,15 @@ class SignUps extends Component {
 
   render() {
     return (
-      <div>
-        Sign Ups: {this.state.signUp}
+      <div className='signup-container'>
+        <Header header='SIGN UP PER DAY' />
+
+        <div className="signup-body">
+          <div className="count">
+            {this.state.signUp}
+          </div>
+        </div>
+
       </div>
     )
   }

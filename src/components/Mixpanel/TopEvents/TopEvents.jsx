@@ -2,6 +2,7 @@ import React, {Component, PropTypes} from 'react';
 import classnames from 'classnames/bind';
 import ReactHighcharts from 'react-highcharts';
 
+import Header from '../../Header';
 import { PIE_CHART_CONFIG } from '../../chartUtils';
 import { getTopEventsChartsData } from '../../helper';
 import styles from './styles.css';
@@ -34,6 +35,7 @@ class TopEvents extends Component {
   render() {
     return (
       <div>
+        <Header header='Top features for v2 Dashboard' />
         <ReactHighcharts
           config={PIE_CHART_CONFIG}
           ref='chart'

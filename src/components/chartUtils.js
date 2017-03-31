@@ -5,7 +5,7 @@ export const PIE_CHART_CONFIG = {
     height: 400
   },
   title: {
-    text: 'Top features for v2 Dashboard'
+    text:''
   },
   tooltip: {
     pointFormat: 'Number of times used: <b>{point.y}</b>'
@@ -49,7 +49,7 @@ export const BAR_CHART_CONFIG = {
     height: 300,
   },
   title: {
-    text: 'Reports generated each week'
+    text: ''
   },
   xAxis: {
     type: 'category',
@@ -90,7 +90,7 @@ export const LINE_CHART_CONFIG = {
     height: 400,
   },
   title: {
-    text: 'Subscriptions from different Source'
+    text: ''
   },
   xAxis: {
     labels: {

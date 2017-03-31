@@ -1,0 +1,14 @@
+{
+  "manifest_version": 1,
+
+  "name": "Priorities",
+  "description": "",
+  "version": "1.0",
+
+  "browser_action": {
+    "new_tab": "index.html"
+  },
+  "permissions": [
+    "activeTab"
+  ]
+}

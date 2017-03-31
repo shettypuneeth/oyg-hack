@@ -1,0 +1,15 @@
+.signup-container {
+  flex: 1;
+}
+
+.signup-body {
+  padding: 10px 0;
+}
+
+.signup-body .count {
+  font-family: 'Open Sans Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 5.5em;
+  text-align: center;
+  color: #27ae60;
+}
