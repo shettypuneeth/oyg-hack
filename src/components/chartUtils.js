@@ -2,7 +2,7 @@ export const PIE_CHART_CONFIG = {
   chart: {
     type: 'pie',
     width: 555,
-    height: 400
+    height: 380
   },
   title: {
     text:''
@@ -46,7 +46,7 @@ export const BAR_CHART_CONFIG = {
   chart: {
     type: 'column',
     width: 555,
-    height: 300,
+    height: 290,
   },
   title: {
     text: ''

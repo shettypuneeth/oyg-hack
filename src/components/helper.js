@@ -1,5 +1,4 @@
 import {MIXPANEL_SECRET} from '../../mixpanelSecret';
-import {ZENDESK_TOP_TICKETS_MOCK} from './mockData';
 
 import {jsonpRequest} from './Services/Request';
 import {
@@ -73,18 +72,26 @@ const mixPanelTopEvents = function () {
     .then(result => aggregateDifferentValues(result))
     .catch(err => err)
 };
-export const processZenDeskData = function () {
-  const response = ZENDESK_TOP_TICKETS_MOCK;
-  const zendeskTickets = [];
-  for( let ticket of response.results){
-    let temp = {};
-    temp['subject'] = ticket['subject'];
-    temp['description'] = ticket['description'];
-    temp['date'] = ticket['created_at'];
-    temp['link'] = ticket['url'];
-    zendeskTickets.push(temp);
+
+const parseDate = (d) => {
+  const date = new Date(d);
+  const options = { year: 'numeric', month: 'long', day: 'numeric' };
+
+  return date.toLocaleDateString("en-US", options)
+}
+
+export const processZenDeskData = function (response) {
+  const { results } = response;
+  if (results) {
+    return results.map(r => ({
+      subject: r['subject'],
+      description: r['description'],
+      date: parseDate(r['created_at']),
+      link: r['link']
+    }));
   }
-  return zendeskTickets;
+
+  return [];
 };
 /**
  * Get the Top Features Pie Chart Data

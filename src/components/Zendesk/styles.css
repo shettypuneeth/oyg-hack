@@ -1,12 +1,56 @@
-.releaseDates-container {
-  font-family: 'Open Sans Condensed', sans-serif;
-  font-weight: 700;
+.zendesk-container {
   flex: 1;
-  height: 400px;
+  height: 100%;
+  overflow-y: auto;
+  padding-right: 8px;
 }
 
-.releaseDates-header {
-  border-bottom: 1px solid #bdc3c7;
-  padding: 5px 0;
-  text-align: center;
+.zendesk-container::-webkit-scrollbar {
+   width: 5px;
+}
+
+.zendesk-container::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: #E0E0E0;
+}
+
+.zendesk-container::-webkit-scrollbar {
+  background: #F5F5F5;
+  border-radius: 10px;
+}
+
+.zendesk-body {
+  padding: 10px 0;
+  font-family: 'Roboto Condensed', sans-serif;
+  font-weight: 400;
+}
+
+.ticket-container {
+  margin-top: 10px;
+  padding: 10px;
+  background: #2980b9;
+  color: white;
+}
+
+.ticket-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  border-bottom: 1px solid white;
+  padding-bottom: 5px;
+}
+
+.ticket-header .subject {
+
+}
+
+.ticket-header .date {
+
+}
+
+.desc {
+  width: 200px;
+  word-wrap: break-word;
+  overflow: hidden;
+  height: 100px;
 }

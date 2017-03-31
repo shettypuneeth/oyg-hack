@@ -3,9 +3,9 @@ import './styles.css';
 
 const propTypes = {};
 
-const Card = ({ children }) => {
+const Card = ({ children, style }) => {
   return (
-    <div className='card-container'>
+    <div className='card-container scroll' style={style}>
       { children }
     </div>
   );

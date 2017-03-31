@@ -10,11 +10,11 @@ class Goals extends Component {
     return (
       <div className='goals-container'>
         <Header header='GOALS' />
-        
+
         <section className='goals-body'>
           <ul>
             <li>
-              UK subscription to react 2M
+              UK subscription to reach 2M
             </li>
 
             <li>
