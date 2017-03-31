@@ -4,6 +4,7 @@ import TopEvents from '../Mixpanel/TopEvents/';
 import ReportsGenerated from '../Mixpanel/ReportsGenerated/';
 import Subscription from '../Mixpanel/Subscription/';
 import SignUps from '../Mixpanel/SignUps/';
+import DrivesCaptured from '../Mixpanel/DrivesCaptured/';
 import './styles.css';
 
 import Goals from '../Goals';
@@ -28,10 +29,10 @@ const Root = () => {
             <SignUps/>
           </Card>
           <Card>
-            <ReportsGenerated/>
+            <DrivesCaptured/>
           </Card>
           <Card>
-            <ReleaseDates />
+            <ReportsGenerated/>
           </Card>
         </div>
 

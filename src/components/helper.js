@@ -117,6 +117,21 @@ export const mixPanelSignUp = function () {
     .catch(err => err)
 };
 
+
+export const mixPanelDrivesCaptured = function () {
+  const currentDate = new Date();
+  const queryParams = {
+    from_date: formatDate(currentDate),
+    to_date: formatDate(currentDate),
+    event: convertArrayToUriencoded(MIXPANEL_EVENTS.drivesCaptured),
+    unit: 'day'
+  };
+  const url = MIXPANEL_EVENTS_ENDPOINT(MIXPANEL_SECRET);
+  return jsonpRequest(url, queryParams)
+    .then(result => aggregateDifferentValues(result))
+    .catch(err => err)
+};
+
 /**
  * { date1: total, date2: total, date3: total and so on}
  */

@@ -14,7 +14,8 @@ export const MIXPANEL_EVENTS = {
               "web_duplicate ", "web_reports_date", "web_defer_autoClassify", "web_start_autoClassify",
               "web_reports_create", "web_reports_archived"],
   payment: "Payment",
-  signUp: ["app_signedUp"]
+  signUp: ["app_signedUp"],
+  drivesCaptured: ["pyt_drivesave"]
 };
 
 /**
