@@ -7,7 +7,8 @@ import SignUps from '../Mixpanel/SignUps/';
 import './styles.css';
 
 import Goals from '../Goals';
-import Priorities from '../Priorities';
+import ReleaseDates from '../ReleaseDates';
+import Zendesk from '../Zendesk';
 
 const Root = () => {
   return (
@@ -30,7 +31,7 @@ const Root = () => {
             <ReportsGenerated/>
           </Card>
           <Card>
-            <Priorities />
+            <ReleaseDates />
           </Card>
         </div>
 
@@ -42,7 +43,7 @@ const Root = () => {
             Hello
           </Card>
           <Card>
-            Hello
+            <Zendesk/>
           </Card>
         </div>
       </div>
