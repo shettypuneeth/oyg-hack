@@ -23,16 +23,18 @@
   position: absolute;
   width: 10px;
   height: 10px;
+  transform: scale(3);
+  opacity: 0;
   top: 1px;
   right: 1px;
   border: 1px solid #e74c3c;
   border-radius: 50%;
-  animation: splash 3s linear infinite;
+  animation: splash 2s cubic-bezier(.17,.67,.83,.67) infinite;
 }
 
 @keyframes splash  {
   0% {
-    transform: scale(0);
+    transform: scale(3);
     opacity: 0;
   }
 
@@ -42,7 +44,7 @@
   }
 
   0% {
-    transform: scale(3);
+    transform: scale(0);
     opacity: 0;
   }
 }
