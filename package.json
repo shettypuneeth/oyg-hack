@@ -6,6 +6,7 @@
   "scripts": {
     "start": "node_modules/.bin/webpack-dev-server",
     "build": "webpack --config webpack.config.prod.js",
+    "post-build": "node ./build/copy-assets",
     "test": ""
   },
   "keywords": [
