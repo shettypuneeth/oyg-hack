@@ -14,7 +14,7 @@ const Copyright = () => {
 
   return (
     <div style={styles}>
-      Made with <span style={{ color: 'red' }}>♥</span> from MDL Bengaluru
+      Made with <span style={{ color: 'red' }}>♥</span> by MDL Bengaluru
     </div>
   );
 };
