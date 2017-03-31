@@ -1,5 +1,4 @@
 import jsonp from 'jsonp';
-import request from 'superagent';
 
 export const objectToParameters = (obj) => {
   const queryParams = Object.keys(obj)
@@ -32,18 +31,7 @@ export function jsonpRequest(url, queryParams) {
   });
 }
 
-export function normalRequest(url, queryParams) {
-  return new Promise((resolve, reject) => {
-    request
-      .get(url)
-      .end(function(err, res){
-        // Calling the end function will send the request
-        if (err) {
-          reject(err);
-        }
-        else {
-          resolve(res);
-        }
-      });
-  });
+export function getRequest(url) {
+  return fetch(url)
+    .then(d => d.json());
 }

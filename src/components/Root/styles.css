@@ -23,3 +23,19 @@
   column-count: 3;
   column-gap: 0;
 }
+
+
+.highcharts-data-label text {
+  font-family: 'Open Sans Condensed', sans-serif;
+  font-size: 12px !important;
+  fill: #34495e !important;
+}
+
+.highcharts-drilldown-axis-label {
+  font-family: 'Open Sans Condensed', sans-serif;
+}
+
+.highcharts-legend-item {
+  font-family: 'Open Sans Condensed', sans-serif;
+  font-weight: 700;
+}

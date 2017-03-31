@@ -39,10 +39,7 @@ const Root = () => {
           <Card>
             <Goals />
           </Card>
-          <Card>
-            Hello
-          </Card>
-          <Card>
+          <Card style={{height: '63.6%'}}>
             <Zendesk/>
           </Card>
         </div>
