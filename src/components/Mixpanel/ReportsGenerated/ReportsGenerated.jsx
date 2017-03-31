@@ -2,6 +2,7 @@ import React, {Component, PropTypes} from 'react';
 import classnames from 'classnames/bind';
 import ReactHighcharts from 'react-highcharts';
 
+import Header from '../../Header';
 import { BAR_CHART_CONFIG } from '../../chartUtils';
 import { getReportsGeneratedChartsData } from '../../helper';
 
@@ -35,6 +36,8 @@ class ReportsGenerated extends Component {
   render() {
     return (
       <div>
+        <Header header='Reports generated each week' />
+        <br />
         <ReactHighcharts
           config={BAR_CHART_CONFIG}
           ref='chart'
