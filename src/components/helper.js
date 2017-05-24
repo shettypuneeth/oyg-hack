@@ -117,10 +117,14 @@ export const mixPanelSignUp = function () {
     .catch(err => err)
 };
 
+const getCurrentDateInPacificZone = () => {
+  const offset = -7;
+  return new Date( new Date().getTime() + offset * 3600 * 1000).toUTCString().replace( / GMT$/, "" );
+};
 
 export const mixPanelDrivesCaptured = function () {
-  const start = new Date();
-  const end = new Date();
+  const start = getCurrentDateInPacificZone();
+  const end = getCurrentDateInPacificZone();
 
   const queryParams = {
     from_date: formatDate(start),
