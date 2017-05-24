@@ -1,14 +1,31 @@
 {
-  "manifest_version": 1,
-
-  "name": "Priorities",
-  "description": "",
-  "version": "1.0",
-
-  "browser_action": {
-    "new_tab": "index.html"
+  "name": "Goals",
+  "short_name": "Goals",
+  "description": "A extension to get the bigger picture of a team ",
+  "version": "1.1.3",
+  "incognito": "split",
+  "chrome_url_overrides": {
+    "newtab": "index.html"
   },
   "permissions": [
-    "activeTab"
-  ]
+    "identity",
+    "https://lobste.rs/*",
+    "https://api.behance.net/*"
+  ],
+  "optional_permissions": [
+    "http://*/",
+    "https://*/",
+    "chrome://favicon/*",
+    "tabs"
+  ],
+  "manifest_version": 2,
+  "content_scripts": [{
+    "js": [
+      "vendor-28980e3eb71663f1b7d8.min.js",
+      "manifest-ec4682d8299f887f7d3f.min.js"
+    ],
+    "matches": ["http://*/*", "https://*/*"]
+  }],
+  "content_security_policy":"script-src 'self'  'unsafe-inline' 'unsafe eval'  https://mixpanel.com https://mileiq.zendesk.com; object-src 'self'"
+
 }

@@ -14,7 +14,7 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, './dist'),
-    filename: '[name].[chunkhash].min.js'
+    filename: '[name].min.js'
   },
   devServer: {
     hot: true,
@@ -57,7 +57,7 @@ module.exports = {
   plugins: [
     new webpack.optimize.CommonsChunkPlugin({
       names: ['vendor', 'manifest'], // Specify the common bundle's name
-      filename: '[name]-[chunkhash].min.js',
+      filename: '[name].min.js',
       minChunks: Infinity
     }),
 

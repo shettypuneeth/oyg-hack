@@ -4,7 +4,7 @@ import styles from './styles.css';
 
 import Header from '../Header';
 import Tickets from './Ticket';
-import { getRequest } from '../Services/Request'
+import { getZendeskRequest } from '../Services/Request'
 import { processZenDeskData } from '../helper'
 
 const cx = classnames.bind(styles);
@@ -29,7 +29,7 @@ class Zendesk extends Component {
   }
 
   componentDidMount() {
-    getRequest('https://058b3586.ngrok.io/goals/zendesk_data/')
+    getZendeskRequest('https://mileiq.zendesk.com/api/v2/search.json?query=type:ticket status:open priority:urgent&sort_by=created_at&sort_order=desc&per_page=5')
       .then(data => {
         const tickets = processZenDeskData(data);
         this.setState({ tickets })

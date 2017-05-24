@@ -35,3 +35,12 @@ export function getRequest(url) {
   return fetch(url)
     .then(d => d.json());
 }
+export function getZendeskRequest(url) {
+  return fetch(url,{
+    headers: {
+      'Authorization': 'Basic YWdlbnRAbWlsZWlxLmNvbS90b2tlbjpoUzZiVDR2N2RGVGludUpNVWczZEJUdGJNeXJmVGJwbjRobGJiRUU2',
+      'Content-Type': 'application/x-www-form-urlencoded'
+    },
+  })
+    .then(d => d.json());
+}
