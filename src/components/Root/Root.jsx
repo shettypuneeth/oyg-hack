@@ -84,12 +84,12 @@ class AddIdea extends Component{
         className='textField'
         id='addidea'
         name='addidea'
-        placeholder={"Add your idea"}
+        placeholder={"Describe your idea"}
         />
         <button
           className= 'btStyle'
           onClick={ModalManager.close}>
-          Close Modal
+          Save
         </button>
       </Modal>
     );

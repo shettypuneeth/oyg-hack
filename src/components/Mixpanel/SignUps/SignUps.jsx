@@ -25,7 +25,7 @@ class SignUps extends Component {
   render() {
     return (
       <div className='signup-container'>
-        <Header header='SIGN UPS TODAY' />
+        <Header header='SIGN UPS YESTERDAY' />
 
         <div className="signup-body">
           <div className="count">

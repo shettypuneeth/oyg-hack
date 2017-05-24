@@ -25,7 +25,7 @@ class SignUps extends Component {
 
   componentDidMount() {
     this.callMixPanel();
-    window.setInterval(this.callMixPanel, 15000);
+    window.setInterval(this.callMixPanel, 30000);
   }
 
   render() {

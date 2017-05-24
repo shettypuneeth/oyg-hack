@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import classnames from 'classnames/bind';
+import jsonp from 'jsonp';
 import styles from './styles.css';
 import Header from '../Header';
 import { getRequest } from '../Services/Request';
+
 
 const cx = classnames.bind(styles);
 
@@ -16,10 +18,10 @@ class Goals extends Component {
   }
 
   componentDidMount() {
-    getRequest('https://058b3586.ngrok.io/goals/fetch_priority/')
+    getRequest('https://goals-rest.herokuapp.com/1/api/goals/fetch_priority')
       .then(data => {
         this.setState({
-          data: data
+          data: data.result
         })
       });
   }
@@ -33,7 +35,7 @@ console.log("Goals:: ",goals);
     for (let index in goals) {
       list.push(<li key={index}>
         {
-          goals[index].goal
+          goals[index]
       }
       </li>);
     }
