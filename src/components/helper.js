@@ -65,7 +65,7 @@ const mixPanelTopEvents = function () {
   const queryParams = {
     from_date: formatDate(firstDay),
     to_date: formatDate(lastDay),
-    event: convertArrayToUriencoded(MIXPANEL_EVENTS.settingsPageEvents),
+    event: convertArrayToUriencoded(MIXPANEL_EVENTS.topEvents),
     unit: 'month',
     type: 'general'
   };
