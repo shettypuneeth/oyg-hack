@@ -65,8 +65,9 @@ const mixPanelTopEvents = function () {
   const queryParams = {
     from_date: formatDate(firstDay),
     to_date: formatDate(lastDay),
-    event: convertArrayToUriencoded(MIXPANEL_EVENTS.topEvents),
-    unit: 'week'
+    event: convertArrayToUriencoded(MIXPANEL_EVENTS.settingsPageEvents),
+    unit: 'month',
+    type: 'general'
   };
   const url = MIXPANEL_EVENTS_ENDPOINT(MIXPANEL_SECRET);
   return jsonpRequest(url, queryParams)

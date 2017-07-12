@@ -1,7 +1,7 @@
 export const PIE_CHART_CONFIG = {
   chart: {
     type: 'pie',
-    width: 555,
+    width: 700,
     height: 380
   },
   title: {
@@ -15,7 +15,7 @@ export const PIE_CHART_CONFIG = {
       allowPointSelect: true,
       dataLabels: {
         enabled: true,
-        format: '{point.name}: {point.percentage:.1f} %',
+        format: '{point.name}: {point.y}',
         style: {
           color: 'black'
         },

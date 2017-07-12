@@ -33,30 +33,6 @@ class Root extends Component {
             <Card>
               <TopEvents/>
             </Card>
-            <Card>
-              <Subscription/>
-            </Card>
-          </div>
-
-          <div className="grid-column">
-            <Card>
-              <SignUps/>
-            </Card>
-            <Card>
-              <DrivesCaptured/>
-            </Card>
-            <Card>
-              <ReportsGenerated/>
-            </Card>
-          </div>
-
-          <div className="grid-column">
-            <Card>
-              <Goals />
-            </Card>
-            <Card style={{ height: '63.6%' }}>
-              <Zendesk/>
-            </Card>
           </div>
         </div>
         <Copyright />
