@@ -58,12 +58,13 @@ const aggregateDifferentValues = function (mixPanelOutput) {
 
 
 const mixPanelTopEvents = function () {
-  const currentDate = new Date();
-  const yesterdayDate = new Date().setDate(currentDate.getDate() - 1);
-  const oneWeekAgoYesterdayDate = new Date().setDate(currentDate.getDate() - 8);
+  // Showing the last month data
+  const date = new Date(), y = date.getFullYear(), m = date.getMonth();
+  const firstDay = new Date(y, m-1, 1);
+  const lastDay = new Date(y, m, 0);
   const queryParams = {
-    from_date: formatDate(oneWeekAgoYesterdayDate),
-    to_date: formatDate(yesterdayDate),
+    from_date: formatDate(firstDay),
+    to_date: formatDate(lastDay),
     event: convertArrayToUriencoded(MIXPANEL_EVENTS.topEvents),
     unit: 'week'
   };
@@ -78,7 +79,7 @@ const parseDate = (d) => {
   const options = { year: 'numeric', month: 'long', day: 'numeric' };
 
   return date.toLocaleDateString("en-US", options)
-}
+};
 
 export const processZenDeskData = function (response) {
   const { results } = response;
