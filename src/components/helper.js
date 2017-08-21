@@ -57,7 +57,7 @@ const aggregateDifferentValues = function (mixPanelOutput) {
 };
 
 
-const mixPanelTopEvents = function () {
+const mixPanelTopEvents = function (events, type='general') {
   // Showing the last month data
   const date = new Date(), y = date.getFullYear(), m = date.getMonth();
   const firstDay = new Date(y, m-1, 1);
@@ -65,9 +65,9 @@ const mixPanelTopEvents = function () {
   const queryParams = {
     from_date: formatDate(firstDay),
     to_date: formatDate(lastDay),
-    event: convertArrayToUriencoded(MIXPANEL_EVENTS.topEvents),
+    event: convertArrayToUriencoded(events),
     unit: 'month',
-    type: 'general'
+    type
   };
   const url = MIXPANEL_EVENTS_ENDPOINT(MIXPANEL_SECRET);
   return jsonpRequest(url, queryParams)
@@ -95,12 +95,14 @@ export const processZenDeskData = function (response) {
 
   return [];
 };
+
 /**
- * Get the Top Features Pie Chart Data
- * @returns {*|Promise.<TResult>}
+ * @param events
+ * @param type
+ * @returns {*|Promise.<TResult>|Request}
  */
-export const getTopEventsChartsData = function () {
-  return mixPanelTopEvents()
+export const getTopEventsChartsData = function (events, type) {
+  return mixPanelTopEvents(events, type)
     .then(result => convertToPieChartFormat(result))
 };
 

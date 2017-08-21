@@ -1,7 +1,7 @@
 export const PIE_CHART_CONFIG = {
   chart: {
     type: 'pie',
-    width: 700,
+    width: 600,
     height: 380
   },
   title: {
